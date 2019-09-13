@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "feedMemos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isbn",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "fetchedAt",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
