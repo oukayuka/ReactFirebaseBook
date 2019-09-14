@@ -12,7 +12,9 @@ if (isJsxFile) {
     plugins: ['stylelint-order'],
     processors: ['stylelint-processor-styled-components'],
     rules: {
+      'declaration-empty-line-before': 'never',
       'indentation': 2,
+      'no-missing-end-of-source-newline': null,
       'string-quotes': 'single',
       'order/properties-alphabetical-order': true
     }
@@ -30,7 +32,9 @@ module.exports = {
   ],
   plugins: ['stylelint-order'],
   rules: {
+    'declaration-empty-line-before': 'never',
     'indentation': 2,
+    'no-missing-end-of-source-newline': null,
     'string-quotes': 'single',
     'order/properties-alphabetical-order': true
   },
