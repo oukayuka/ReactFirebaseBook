@@ -1,0 +1,66 @@
+rules_version = '2';
+
+service cloud.firestore {
+  function isValidDocCounter(counter) {
+    return counter.size() == 2
+      && 'count' in counter && counter.count is int
+      && 'updatedAt' in counter && counter.updatedAt is timestamp;
+  }
+
+  function isValidUser(user) {
+    return user.size() == 8
+      && 'screenName' in user && user.screenName is string
+      && 'displayName' in user
+      && (user.displayName is string || user.displayName == null)
+      && 'description' in user
+      && (user.description is string || user.description == null)
+      && 'photoUrl' in user
+      && (user.photoUrl is string || user.photoUrl == null)
+      && 'providerUid' in user && user.providerUid is string
+      && 'createdAt' in user && user.createdAt is timestamp
+      && 'updatedAt' in user && user.updatedAt is timestamp;
+  }
+
+  function isValidImage(image) {
+    return image == null || image.matches('^https?://.+[.](jpg|jpeg|gif|png)');
+  }
+
+  match /databases/{database}/documents {
+    match /authors/{authorId} {
+      allow read;
+    }
+    match /books/{bookId} {
+      allow read;
+    }
+    match /publishers/{publisherId} {
+      allow read;
+    }
+    match /docCounters/{docCounterId} {
+      allow read;
+      allow create: if request.auth != null
+        && docCounterId == 'users'
+        && isValidDocCounter(request.resource.data);
+      allow update: if request.auth != null
+        && docCounterId == 'users'
+        && isValidDocCounter(request.resource.data)
+        && (request.resource.data.count == resource.data.count + 1
+        || request.resource.data.count == resource.data.count - 1);
+    }
+    match /users/{userId} {
+      allow read;
+      allow create: if request.auth != null && request.auth.uid == userId
+        && isValidUser(request.resource.data)
+        && isValidImage(request.resource.data.photoUrl)
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time;
+      allow update: if request.auth != null && request.auth.uid == userId
+        && isValidUser(request.resource.data)
+        && isValidImage(request.resource.data.photoUrl)
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.screenName == resource.data.screenName
+        && request.resource.data.providerUid == resource.data.providerUid
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

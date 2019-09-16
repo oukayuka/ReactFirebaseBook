@@ -9,3 +9,6 @@ node_modules/
 
 # Firebase Admin SDK credential
 *firebase-adminsdk*.json
+
+# Firebase environment variables file
+.runtimeconfig.json

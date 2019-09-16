@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/eslint": "^6.1.1",
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/lodash": "^4.14.138",
     "@types/prettier": "^1.18.2",

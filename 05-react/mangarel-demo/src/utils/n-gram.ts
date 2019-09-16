@@ -1,3 +1,8 @@
+/*
+ * This function is ported from https://www.npmjs.com/package/n-gram
+ *   Copyright (c) 2014 Titus Wormer <tituswormer@gmail.com>
+ *   (The MIT License)
+ */
 export const nGram = (n: number) => {
   if (n < 1 || n === Infinity) {
     throw new Error(`${n} is not a valid argument for n-gram`);
