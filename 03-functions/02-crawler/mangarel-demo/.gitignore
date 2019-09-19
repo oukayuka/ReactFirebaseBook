@@ -50,9 +50,10 @@ typings/
 .*.swp
 .vscode/chrome
 
-# dotenv environment variables file
-#.env
+# environment variables file
+.env
 #.env.*
+.firebaserc
 
 # misc
 .DS_Store
