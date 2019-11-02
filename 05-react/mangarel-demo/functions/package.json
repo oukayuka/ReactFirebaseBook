@@ -23,7 +23,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "commander": "^3.0.1",
-    "csv-parse": "^4.4.5",
+    "csv-parse": "^4.4.6",
     "date-fns": "^2.2.1",
     "date-fns-timezone": "^0.1.4",
     "firebase": "^6.6.1",
