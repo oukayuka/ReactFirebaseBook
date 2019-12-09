@@ -4,6 +4,10 @@
 
 ### サンプルコードご利用の注意
 
+p.7
+
+※使用している主なソフトウェアのバージョンは不定期に更新されます。それにともなって、本文中のバージョンを指定している実行コマンド等の記述も変更されます。
+
 p.9
 
 ```diff
@@ -13,6 +17,82 @@ p.9
 -・3-4以降、functions/.runtimeconfig.sample.jsonを.runtime.config.jsonにリネームし、その中で読者ご自身が登録した楽天アプリIDを設定する
 +・3-4以降、functions/.runtimeconfig.sample.jsonを.runtimeconfig.jsonにリネームし、その中で読者ご自身が登録した楽天アプリIDを設定する
 ・5章以降、プロジェクトルートの.env.sampleを.envとしてコピーし、Firebaseのコンソールから参照できるAPIキーやアプリIDをその中に記述する
+```
+
+p.18-19
+
+```diff
+   "scripts": {
+     "start": "react-scripts start",
+     "build": "react-scripts build",
+     "test": "react-scripts test",
+     "eject": "react-scripts eject",
+-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' functions/**/*.ts; stylelint 'src/**/*.css'"
++    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'; cd functions/ && eslint 'src/**/*.{js,ts}'",
+  ︙
+   "lint-staged": {
+-    "*.{js,jsx,ts,tsx}": [
+-      "eslint --fix",
+-      "git add"
+-    ],
+-    "*.css": [
+-      "stylelint --fix",
+-      "git add"
+-    ]
++    "src/**/*.{js,jsx,ts,tsx}": [
++      "eslint --fix",
++      "git add"
++    ],
++    "src/**/*.{css,jsx,tsx}": [
++      "stylelint --fix",
++      "git add"
++    ],
++    "functions/src/**/*.{js,ts}": [
++      "cd functions/ && eslint --fix",
++      "git add"
++    ]
+   },
+```
+
+p.19
+
+```diff
+-秋谷さんもGoogleのアカウントって盛ってるの
++秋谷さんもGoogleのアカウントって持ってるの
+```
+
+p.20
+
+```diff
+-FirebaseではHostingで .firebase.appと.web.appの二つのドメインが使える
++FirebaseではHostingで .firebaseapp.comと.web.appの二つのドメインが使える
+```
+
+p.28-29
+
+```diff
+ {
+   "compilerOptions": {
+     "esModuleInterop": true,
+     "lib": ["dom", "esnext"],
+     "module": "commonjs",
++    "moduleResolution": "node",
+     "noImplicitReturns": true,
+     "noUnusedLocals": true,
+     "outDir": "lib",
++    "removeComments": true,
+     "resolveJsonModule": true,
++    "rootDir": "src",
+     "sourceMap": true,
+     "strict": true,
+     "target": "es2017",
+     "types": ["jest", "node"],
++    "typeRoots": ["node_modules/@types", "../node_modules/@types"]
+   },
+   "compileOnSave": true,
+   "include": ["src"],
+   "exclude": ["node_modules"]
+ }
 ```
 
 p.45
