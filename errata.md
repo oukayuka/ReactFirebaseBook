@@ -11,12 +11,12 @@ p.7
 p.9
 
 ```diff
-+・1章以降、プロジェクトルートの .firebaserc.sampleを.firebasercにリネームし、その中のデフォルトプロジェクトIDを読者ご自身が作成したFirebaseプロジェクトのプロジェクトIDに書き換える（またはご自身でfirebase initを実行する）
-・2章以降、Firebaseのコンソールで生成した秘密鍵ファイルをfunctions/src/ 配下にmangarel-demo-firebase-adminsdk.jsonとして設置する
-・3-3. Rakuten Developersにご自身で登録したアプリの楽天アプリIDをfunctions/src/index.ts内の定数RAKUTEN_APP_IDに設定する
--・3-4以降、functions/.runtimeconfig.sample.jsonを.runtime.config.jsonにリネームし、その中で読者ご自身が登録した楽天アプリIDを設定する
-+・3-4以降、functions/.runtimeconfig.sample.jsonを.runtimeconfig.jsonにリネームし、その中で読者ご自身が登録した楽天アプリIDを設定する
-・5章以降、プロジェクトルートの.env.sampleを.envとしてコピーし、Firebaseのコンソールから参照できるAPIキーやアプリIDをその中に記述する
++・1章以降、プロジェクトルートの .firebaserc.sample を .firebaserc にリネームし、その中のデフォルトプロジェクトIDを読者ご自身が作成した Firebase プロジェクトのプロジェクトIDに書き換える（またはご自身で firebase init を実行する）
+・2章以降、Firebase のコンソールで生成した秘密鍵ファイルを functions/src/ 配下にmangarel-demo-firebase-adminsdk.json として設置する
+・3-3. Rakuten Developers にご自身で登録したアプリの楽天アプリID を functions/src/index.ts 内の定数 RAKUTEN_APP_ID に設定する
+-・3-4以降、functions/.runtimeconfig.sample.json を .runtime.config.json にリネームし、その中で読者ご自身が登録した楽天アプリID を設定する
++・3-4以降、functions/.runtimeconfig.sample.json を .runtimeconfig.json にリネームし、その中で読者ご自身が登録した楽天アプリID を設定する
+・5章以降、プロジェクトルートの .env.sample を .env としてコピーし、Firebase のコンソールから参照できる APIキーやアプリID をその中に記述する
 ```
 
 p.18-19
@@ -57,15 +57,15 @@ p.18-19
 p.19
 
 ```diff
--秋谷さんもGoogleのアカウントって盛ってるの
-+秋谷さんもGoogleのアカウントって持ってるの
+-秋谷さんも Google のアカウントって盛ってるの
++秋谷さんも Google のアカウントって持ってるの
 ```
 
 p.20
 
 ```diff
--FirebaseではHostingで .firebase.appと.web.appの二つのドメインが使える
-+FirebaseではHostingで .firebaseapp.comと.web.appの二つのドメインが使える
+-Firebase では Hosting で .firebase.app と .web.app の二つのドメインが使える
++Firebase では Hosting で .firebaseapp.com と .web.app の二つのドメインが使える
 ```
 
 p.28-29
@@ -93,6 +93,44 @@ p.28-29
    "include": ["src"],
    "exclude": ["node_modules"]
  }
+```
+
+p.32
+
+```diff
+-さっきと同様、TXTレコードの記述を上書きする形で
++さっきの TXTレコードの記述に追記する形で
+```
+
+p.40
+
+```diff
+     case collectionName.publishers: {
+-      const docs =
++      const doc: Required<Publisher>[] =
+         records.map((record: Publisher) => ({
+  ︙
+       for await (const doc of docs) {
+-        const { id } = doc;
+-        const docWithoutId = { ...doc };
+-        delete docWithoutId.id;
++        const { id, ...docWithoutId } = doc;
+         await ref.doc(id).set(docWithoutId);
+       }
+```
+
+p.42
+
+```diff
+-さっきも言ったけど、Firestore ドキュメントの ID はドキュメントの外にあるから、すぐ上でオブジェクトからID値を抜き出した後、そのキーと値を除去してるわけ」
++さっきも言ったけど、Firestore ドキュメントの ID はドキュメントの外にあるから、オブジェクトから ID とそれ以外のデータを分けて抜き出してこのオペレーションをやってるわけ」
+```
+
+p.45
+
+```diff
+-公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてる死ね。
++公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてるしね。
 ```
 
 p.45

@@ -10,6 +10,7 @@ import { addCounter } from '../firestore-admin/record-counter';
 import serviceAccount from '../mangarel-demo-firebase-adminsdk.json';
 
 admin.initializeApp({
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
   credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
 });
 
@@ -26,18 +27,16 @@ const uploadSeed = async (collection: string, seedFile: string) => {
 
   switch (collection) {
     case collectionName.publishers: {
-      const docs =
+      const docs: Required<Publisher>[] =
         records.map((record: Publisher) => ({
           ...record,
-          website: record.website ? record.website : null,
+          website: record.website ?? null,
           createdAt: admin.firestore.FieldValue.serverTimestamp(),
           updatedAt: admin.firestore.FieldValue.serverTimestamp(),
         })) || [];
 
       for await (const doc of docs) {
-        const { id } = doc;
-        const docWithoutId = { ...doc };
-        delete docWithoutId.id;
+        const { id, ...docWithoutId } = doc;
         await ref.doc(id).set(docWithoutId);
       }
       await addCounter(db, collection, docs.length);
