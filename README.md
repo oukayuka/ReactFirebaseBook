@@ -9,11 +9,11 @@
 
 このリポジトリに登録されているサンプルコードは、ご自身で各種サービスに登録してそのキーなどを適切に設定しないとダウンロードしたままでは動作しません。本文各章の説明をご覧になった上で、その手順に従って必要な設定を行ってください。
 
-- １章以降、プロジェクトルートの .firebaserc.sample を .firebaserc にリネームし、その中のデフォルトプロジェクト ID を読者ご自身が作成した Firebase プロジェクトのプロジェクト ID に書き換える（またはご自身で `firebase init` を実行する）
-- ２章以降、Firebase のコンソールで生成した秘密鍵ファイルを functions/src/ 配下に mangarel-demo-firebase-adminsdk.json として設置する
-- 3-3. [Rakuten Developers](https://webservice.rakuten.co.jp/) にご自身で登録したアプリの楽天アプリ ID を functions/src/index.ts 内の定数 RAKUTEN_APP_ID に設定する
-- 3-4 以降、functions/.runtimeconfig.sample.json を .runtimeconfig.json としてコピーし、その中で楽天アプリ ID を設定する
-- ５章以降、プロジェクトルートの .env.sample を .env としてコピーし、Firebase のコンソールから参照できる API キーやアプリ ID をその中に記述する
+- **１章以降**、プロジェクトルートの .firebaserc.sample を .firebaserc にリネームし、その中のデフォルトプロジェクト ID を読者ご自身が作成した Firebase プロジェクトのプロジェクト ID に書き換える（またはご自身で `firebase init` を実行する）
+- **２章以降**、Firebase のコンソールで生成した秘密鍵ファイルを functions/src/ 配下に mangarel-demo-firebase-adminsdk.json として設置する
+- **3-3**. [Rakuten Developers](https://webservice.rakuten.co.jp/) にご自身で登録したアプリの楽天アプリ ID を functions/src/index.ts 内の定数 RAKUTEN_APP_ID に設定する
+- **3-4 以降**、functions/.runtimeconfig.sample.json を .runtimeconfig.json としてコピーし、その中で楽天アプリ ID を設定する
+- **５章以降**、プロジェクトルートの .env.sample を .env としてコピーし、Firebase のコンソールから参照できる API キーやアプリ ID をその中に記述する
 
 ## 正誤表
 
