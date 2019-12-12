@@ -24,7 +24,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 };
 
 const SearchForm: FC<SearchFormProps> = ({
-  handleChange = () => {},
+  handleChange = () => undefined,
   values = { q: '' },
 }) => (
   <FormWrapper>

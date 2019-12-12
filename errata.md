@@ -8,6 +8,13 @@ p.7
 
 ※使用している主なソフトウェアのバージョンは不定期に更新されます。それにともなって、本文中のバージョンを指定している実行コマンド等の記述も変更されます。
 
+p.8
+
+```diff
+-stylelint（shinn.stylelint）　…… stylelint と連携してエディタ内で CSS の文法チェックを行う。
++stylelint-plus（hex-ci.stylelint-plus）　…… stylelint と連携してエディタ内で CSS の文法チェックを行う。auto fix on save に対応。
+```
+
 p.9
 
 ```diff
@@ -163,7 +170,19 @@ p.95
 +数値やアルファベットの全角文字を半角にするhalfWiden()、
 ```
 
-p.105
+p.100
+
+```diff
+-・react-routerと、そのHooksインターフェース（非公式）のuse-react-router
++・react-router
+```
+
+```diff
+-$ yarn add react-router react-router-dom use-react-router @emotion/core @emotion/styled  semantic-ui-react semantic-ui-css date-fns lodash sprintf-js
++$ yarn add react-router react-router-dom @emotion/core @emotion/styled  semantic-ui-react semantic-ui-css date-fns lodash sprintf-js
+```
+
+p.107
 
 ```diff
 -const Home: FC = () => {
@@ -175,4 +194,46 @@ p.105
 
 -export default Home;
 +export default CalendarContainer;
+```
+
+p.108
+
+```diff
+-type booksOptions = {
++type BooksOptions = {
+   limit?: number;
+ };
+-const defaultOptions: booksOptions = {
++const defaultOptions: Requied<BooksOptions> = {
+   limit: 30,
+ };
+
+-onst useBooks = (options?: booksOptions) => {
++const useBooks = (options?: BooksOptions) => {
+ ︙
+       .orderBy('publishedOn', 'asc')
+-      .limit(optionsRef.current.limit!);
++      .limit(optionsRef.current.limit);
+```
+
+p.110
+
+```diff
+-type searchOptions = {
++type SearchOptions = {
+   limit?: number;
+ };
+-const defaultOptions: searchOptions = {
++const defaultOptions: Required<SearchOptions> = {
+   limit: 30,
+ };
+ ︙
+ const buildQuery = (
+   collection: firebase.firestore.CollectionReference,
+   q: string,
+-  options: searchOptions,
++  options: Required<SearchOptions>,
+ ) => {
+-  let query = collection.limit(options.limit!);
++  let query = collection.limit(options.limit);
 ```
