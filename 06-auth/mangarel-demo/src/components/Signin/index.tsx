@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
-import useReactRouter from 'use-react-router';
 import firebase from 'firebase/app';
+import { useHistory } from 'react-router';
 import styled from '@emotion/styled';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid';
@@ -43,7 +43,7 @@ const GridWrapper = styled.main`
 const Signin: FC = () => {
   const { auth } = useContext(FirebaseContext);
   const { setCredential } = useContext(UserContext);
-  const { history } = useReactRouter();
+  const history = useHistory();
   const uiConfig: firebaseui.auth.Config = {
     signInFlow: 'redirect',
     signInOptions: [

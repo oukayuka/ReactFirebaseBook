@@ -24,6 +24,11 @@ p.9
 -・3-4以降、functions/.runtimeconfig.sample.json を .runtime.config.json にリネームし、その中で読者ご自身が登録した楽天アプリID を設定する
 +・3-4以降、functions/.runtimeconfig.sample.json を .runtimeconfig.json にリネームし、その中で読者ご自身が登録した楽天アプリID を設定する
 ・5章以降、プロジェクトルートの .env.sample を .env としてコピーし、Firebase のコンソールから参照できる APIキーやアプリID をその中に記述する
+
+　なお、サンプルコードはGitHubの以下のリポジトリに章ごとに掲載しています。
+　https://github.com/oukayuka/ReactFirebaseBook
+
++　また本文中に引用しているサンプルコードの内容は、ときおり説明を簡略化するために記述を省略している箇所があります（例： eslint-disable によるコメントアウト）。そのため、そのまま手で写してもエラーになることがありますので、動作確認時には上記のリポジトリからダウンロードしてきたものを実行するようにしてください。
 ```
 
 p.18-19

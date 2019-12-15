@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 import admin from 'firebase-admin';
-import { forEach } from 'lodash';
+import forEach from 'lodash/forEach';
 import { isDevelopment } from './utils/env';
 
 admin.initializeApp();
