@@ -1,21 +1,28 @@
 # 『りあクト！ Firebase で始めるサーバーレス React 開発』の正誤表
 
-## 本書について
+## 注意
 
-### サンプルコードご利用の注意
+内容は随時アップデートされます。なおページの指定は「修正前（修正後）」のフォーマットで記述されています。
 
-p.7
+p.6（p.6）
+
+```diff
+-React歴は三年年を超えたところ。
++React歴は三年を超えたところ。
+```
+
+p.7（p.7）
 
 ※使用している主なソフトウェアのバージョンは不定期に更新されます。それにともなって、本文中のバージョンを指定している実行コマンド等の記述も変更されます。
 
-p.8
+p.8（p.8）
 
 ```diff
 -stylelint（shinn.stylelint）　…… stylelint と連携してエディタ内で CSS の文法チェックを行う。
 +stylelint-plus（hex-ci.stylelint-plus）　…… stylelint と連携してエディタ内で CSS の文法チェックを行う。auto fix on save に対応。
 ```
 
-p.9
+p.9（p.9）
 
 ```diff
 +・1章以降、プロジェクトルートの .firebaserc.sample を .firebaserc にリネームし、その中のデフォルトプロジェクトIDを読者ご自身が作成した Firebase プロジェクトのプロジェクトIDに書き換える（またはご自身で firebase init を実行する）
@@ -31,7 +38,7 @@ p.9
 +　また本文中に引用しているサンプルコードの内容は、ときおり説明を簡略化するために記述を省略している箇所があります（例： eslint-disable によるコメントアウト）。そのため、そのまま手で写してもエラーになることがありますので、動作確認時には上記のリポジトリからダウンロードしてきたものを実行するようにしてください。
 ```
 
-p.18-19
+p.18-19（p.18-19）
 
 ```diff
    "scripts": {
@@ -66,21 +73,21 @@ p.18-19
    },
 ```
 
-p.19
+p.19（p.19）
 
 ```diff
 -秋谷さんも Google のアカウントって盛ってるの
 +秋谷さんも Google のアカウントって持ってるの
 ```
 
-p.20
+p.20（p.20）
 
 ```diff
 -Firebase では Hosting で .firebase.app と .web.app の二つのドメインが使える
 +Firebase では Hosting で .firebaseapp.com と .web.app の二つのドメインが使える
 ```
 
-p.28-29
+p.28（p.28-29）
 
 ```diff
  {
@@ -107,14 +114,14 @@ p.28-29
  }
 ```
 
-p.32
+p.32（p.32）
 
 ```diff
 -さっきと同様、TXTレコードの記述を上書きする形で
 +さっきの TXTレコードの記述に追記する形で
 ```
 
-p.40
+p.39（p.40）
 
 ```diff
      case collectionName.publishers: {
@@ -131,35 +138,35 @@ p.40
        }
 ```
 
-p.42
+p.41（p.42）
 
 ```diff
--さっきも言ったけど、Firestore ドキュメントの ID はドキュメントの外にあるから、すぐ上でオブジェクトからID値を抜き出した後、そのキーと値を除去してるわけ」
+-さっきも言ったけど、Firestore ドキュメントの ID はドキュメントの外にあるから、すぐ上でオブジェクトから ID値を抜き出した後、そのキーと値を除去してるわけ」
 +さっきも言ったけど、Firestore ドキュメントの ID はドキュメントの外にあるから、オブジェクトから ID とそれ以外のデータを分けて抜き出してこのオペレーションをやってるわけ」
 ```
 
-p.45
+p.45（p.46）
 
 ```diff
 -公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてる死ね。
 +公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてるしね。
 ```
 
-p.45
-
-```diff
--公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてる死ね。
-+公式からも大量のデータの削除はFirebase CLIから実行することが推奨されてるしね。
-```
-
-p.51
+p.51（p.52）
 
 ```diff
 -このローカルサーもホットリロードが効くようになってるよ。
 +このローカルサーバもホットリロードが効くようになってるよ。
 ```
 
-p.94
+p.59（p.60）
+
+```diff
+-「だからまずその出版社のデータを全権取得して、
++「だからまずその出版社のデータを全件取得して、
+```
+
+p.94（p.95）
 
 ```diff
 -words.forEach(word => {
@@ -168,14 +175,14 @@ p.94
  });
 ```
 
-p.95
+p.95（p.96）
 
 ```diff
 -数値やアルファベットの全角文字を半角にするhallfWiden()、
 +数値やアルファベットの全角文字を半角にするhalfWiden()、
 ```
 
-p.100
+p.98（p.100）
 
 ```diff
 -・react-routerと、そのHooksインターフェース（非公式）のuse-react-router
@@ -187,7 +194,7 @@ p.100
 +$ yarn add react-router react-router-dom @emotion/core @emotion/styled  semantic-ui-react semantic-ui-css date-fns lodash sprintf-js
 ```
 
-p.107
+p.105（p.107）
 
 ```diff
 -const Home: FC = () => {
@@ -201,7 +208,7 @@ p.107
 +export default CalendarContainer;
 ```
 
-p.108
+p.106（p.108）
 
 ```diff
 -type booksOptions = {
@@ -221,7 +228,7 @@ p.108
 +      .limit(optionsRef.current.limit);
 ```
 
-p.110
+p.108（p.110）
 
 ```diff
 -type searchOptions = {
@@ -241,4 +248,31 @@ p.110
  ) => {
 -  let query = collection.limit(options.limit!);
 +  let query = collection.limit(options.limit);
+```
+
+p.117（p.119）
+
+```diff
+   user: null,
+   credential: null,
+-  setCredential: () => {},
++  setCredential: () => undefined,
+ });
+```
+
+p.120（p.122）
+
+```diff
+ import React, { FC, useContext } from 'react';
+-import useReactRouter from 'use-react-router';
++import { useHistory } from 'react-router';
+ import firebase from 'firebase/app';
+ import styled from '@emotion/styled';
+ ︙
+ const Signin: FC = () => {
+   const { auth } = useContext(FirebaseContext);
+   const { setCredential } = useContext(UserContext);
+-  const { history } = useReactRouter();
++  const history = useHistory();
+   const uiConfig: firebaseui.auth.Config = {
 ```
