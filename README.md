@@ -63,6 +63,6 @@
 - 6-2. ログイン機能の実装
 - 6-3. Firestore にセキュリティルールを適用する
 
-![](https://booth.pximg.net/a6bb6149-3c80-4a32-af82-d43ef5505047/i/1572683/5b89ac48-5ee9-4564-8a88-c9821e4b2070_base_resized.jpg)
+![](https://lh3.googleusercontent.com/mMmkA5cvpyNrQFYLM7Aa1h_dmWHJ3_a-_xNrAbqZvCh6bJIMC-nTrRMdJDSZqDpHa6SwTIqoBUIersQpW2l08Q)
 
-© 2019 [くるみ割り書房 / Nutcracker Publishing](https://oukayuka.booth.pm/)
+© 2019 [くるみ割り書房 / Nutcracker Books](https://oukayuka.booth.pm/)
