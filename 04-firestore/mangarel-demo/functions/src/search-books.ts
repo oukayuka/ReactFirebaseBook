@@ -15,7 +15,8 @@ module.exports = functions
     tokenize(searchWord).forEach(token => {
       query = query.where(`tokenMap.${token}`, '==', true);
     });
-    const snap = await query.orderBy('publishedOn').get();
+    const snap = await query.get();
+    // const snap = await query.orderBy('publishedOn').get();
     const data = snap.docs.map(doc => ({
       id: doc.id,
       ...doc.data(),

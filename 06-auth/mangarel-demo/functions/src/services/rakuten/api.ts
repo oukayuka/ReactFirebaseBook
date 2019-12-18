@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { forEach } from 'lodash';
+import forEach from 'lodash/forEach';
 import { BookItem } from './models/book-item';
 
 const BASE_URL =

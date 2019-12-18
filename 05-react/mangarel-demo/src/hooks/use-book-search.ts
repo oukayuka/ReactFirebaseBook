@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useContext, useEffect, useRef, useState } from 'react';
 
 import { Book } from 'services/mangarel/models/book';
@@ -6,19 +5,19 @@ import { collectionName } from 'services/mangarel/constants';
 import { FirebaseContext } from 'contexts';
 import { tokenize } from 'utils/text-processor';
 
-type searchOptions = {
+type SearchOptions = {
   limit?: number;
 };
-const defaultOptions: searchOptions = {
+const defaultOptions: Required<SearchOptions> = {
   limit: 30,
 };
 
 const buildQuery = (
   collection: firebase.firestore.CollectionReference,
   q: string,
-  options: searchOptions,
+  options: Required<SearchOptions>,
 ) => {
-  let query = collection.limit(options.limit!);
+  let query = collection.limit(options.limit);
 
   tokenize(q).forEach(token => {
     query = query.where(`tokenMap.${token}`, '==', true);
@@ -27,7 +26,7 @@ const buildQuery = (
   return query;
 };
 
-const useBookSearch = (q: string, options?: searchOptions) => {
+const useBookSearch = (q: string, options?: SearchOptions) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);

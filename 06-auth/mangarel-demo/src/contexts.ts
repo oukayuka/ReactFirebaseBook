@@ -24,7 +24,7 @@ type UserContextValue = {
 export const UserContext = createContext<UserContextValue>({
   user: null,
   credential: null,
-  setCredential: () => {},
+  setCredential: () => undefined,
 });
 
 export const ThemeContext = createContext(

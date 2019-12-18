@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "CoenraadS.bracket-pair-colorizer",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "hex-ci.stylelint-plus",
+    "jpoissonnier.vscode-styled-components",
+    "mechatroner.rainbow-csv",
+    "mikestead.dotenv",
+    "oderwat.indent-rainbow",
+    "orta.vscode-jest",
+    "toba.vsfire",
+    "vincaslt.highlight-matching-tag",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "vscode-icons-team.vscode-icons"
+  ]
+}

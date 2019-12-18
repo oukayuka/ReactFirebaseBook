@@ -17,7 +17,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   buttonTexts = [],
   icons,
   initialActive = false,
-  toggle = () => {},
+  toggle = () => undefined,
 }) => {
   const [isActive, setIsActive] = useState<boolean>(initialActive);
   const handleClick = () => {

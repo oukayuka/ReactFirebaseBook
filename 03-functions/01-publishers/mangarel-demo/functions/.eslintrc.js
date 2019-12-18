@@ -28,8 +28,6 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    // patch for https://github.com/typescript-eslint/typescript-eslint/issues/864
-    createDefaultProgram: true,
     ecmaVersion: 2018,
     project: './tsconfig.json',
     sourceType: 'module',
@@ -114,19 +112,6 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
-
-    // prettier
-    'prettier/prettier': [
-      'error',
-      {
-        'bracketSpacing': true,
-        'printWidth': 80,
-        'semi': true,
-        'singleQuote': true,
-        'trailingComma': 'all',
-        'useTabs': false,
-      },
-    ],
   },
   settings: {
     'import/parsers': {

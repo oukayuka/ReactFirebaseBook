@@ -6,14 +6,14 @@ import { Book } from 'services/mangarel/models/book';
 import { collectionName } from 'services/mangarel/constants';
 import { FirebaseContext } from 'contexts';
 
-type booksOptions = {
+type BooksOptions = {
   limit?: number;
 };
-const defaultOptions: booksOptions = {
+const defaultOptions: Required<BooksOptions> = {
   limit: 30,
 };
 
-const useBooks = (options?: booksOptions) => {
+const useBooks = (options?: BooksOptions) => {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
@@ -28,7 +28,7 @@ const useBooks = (options?: booksOptions) => {
       .collection(collectionName.books)
       .where('publishedOn', '>=', startOfDay(new Date()))
       .orderBy('publishedOn', 'asc')
-      .limit(optionsRef.current.limit!);
+      .limit(optionsRef.current.limit);
 
     const load = async () => {
       setLoading(true);
