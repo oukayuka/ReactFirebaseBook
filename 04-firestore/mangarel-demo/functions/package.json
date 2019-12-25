@@ -6,6 +6,7 @@
     "dbreset:publishers": "firebase firestore:delete -y --shallow publishers",
     "dbseed": "npm run dbseed:publishers",
     "dbseed:publishers": "node lib/commands/dbseed.js publishers seeds/publishers.tsv",
+    "deploy": "firebase deploy --only functions",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,ts}'",
     "logs": "firebase functions:log",
