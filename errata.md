@@ -126,7 +126,7 @@ p.39（p.40）
 ```diff
      case collectionName.publishers: {
 -      const docs =
-+      const doc: Required<Publisher>[] =
++      const docs: Required<Publisher>[] =
          records.map((record: Publisher) => ({
   ︙
        for await (const doc of docs) {
