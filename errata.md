@@ -166,6 +166,18 @@ p.59（p.60）
 +「だからまずその出版社のデータを全件取得して、
 ```
 
+p.61（p.62）
+
+```diff
+-firebase > fetchCalendear()
++firebase > fetchCalendar()
+```
+
+```diff
+-import { subdays } from 'date-fns';
++import { subDays } from 'date-fns';
+```
+
 p.71（p.72）
 
 ```diff
